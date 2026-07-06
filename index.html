@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumit Sablaniya | DevOps Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:#0b1120;color:#fff}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:18px 8%;background:rgba(0,0,0,.45);backdrop-filter:blur(10px);z-index:10}
+header a{color:#fff;text-decoration:none;margin-left:18px}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+background:linear-gradient(-45deg,#0b1120,#1d4ed8,#7c3aed,#0b1120);
+background-size:400% 400%;animation:bg 12s ease infinite}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.hero h1{font-size:60px}
+.hero h2{color:#60a5fa;height:40px}
+.btn{display:inline-block;margin-top:25px;padding:12px 24px;background:#2563eb;color:#fff;border-radius:30px;text-decoration:none;transition:.3s}
+.btn:hover{transform:scale(1.08)}
+section{padding:90px 8%}
+h3{font-size:34px;margin-bottom:20px;color:#60a5fa}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#172554;padding:22px;border-radius:15px;transition:.4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 0 20px #3b82f6}
+.timeline{border-left:3px solid #3b82f6;padding-left:20px}
+.item{margin:20px 0}
+.progress{background:#23314d;height:8px;border-radius:10px;margin:8px 0}
+.bar{height:8px;background:#3b82f6;border-radius:10px;animation:grow 2s forwards;width:0}
+@keyframes grow{to{width:var(--w)}}
+footer{text-align:center;padding:25px;background:#111827}
+@media(max-width:700px){.hero h1{font-size:38px}header{padding:15px 5%}}
+</style>
+</head>
+<body>
+
+<header>
+<div><b>Sumit Sablaniya</b></div>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Hi, I'm Sumit Sablaniya</h1>
+<h2 id="typing"></h2>
+<p>DevOps Engineer | AWS | Linux | Docker | Kubernetes | Jenkins</p>
+<a class="btn" href="#contact">Hire Me</a>
+</div>
+</section>
+
+<section id="about">
+<h3>About Me</h3>
+<p>Motivated DevOps Engineer with hands-on experience in Linux, AWS, Docker, Kubernetes, Jenkins, Ansible, Prometheus, Grafana, Git and GitHub. Built CI/CD pipelines and deployed Three-Tier Applications on AWS.</p>
+</section>
+
+<section id="skills">
+<h3>Skills</h3>
+<div class="cards">
+<div class="card">AWS<div class="progress"><div class="bar" style="--w:90%"></div></div></div>
+<div class="card">Linux<div class="progress"><div class="bar" style="--w:95%"></div></div></div>
+<div class="card">Docker<div class="progress"><div class="bar" style="--w:90%"></div></div></div>
+<div class="card">Kubernetes<div class="progress"><div class="bar" style="--w:85%"></div></div></div>
+<div class="card">Jenkins<div class="progress"><div class="bar" style="--w:88%"></div></div></div>
+<div class="card">Ansible<div class="progress"><div class="bar" style="--w:80%"></div></div></div>
+</div>
+</section>
+
+<section>
+<h3>Experience</h3>
+<div class="timeline">
+<div class="item">
+<h4>DevOps Intern - GRRAS Solutions</h4>
+<p>Worked on Linux administration, Docker, Kubernetes, Jenkins, AWS, Prometheus and Grafana.</p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h3>Projects</h3>
+<div class="cards">
+<div class="card">
+<h4>Three-Tier AWS Deployment</h4>
+<p>CI/CD, Docker, Kubernetes, Jenkins, Monitoring with Grafana & Prometheus.</p>
+</div>
+<div class="card">
+<h4>HR Management System</h4>
+<p>Developed using HTML, CSS, PHP and MySQL with employee onboarding and leave management.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h3>Certificates</h3>
+<div class="cards">
+<div class="card">RHCSA</div>
+<div class="card">AWS Cloud Foundations</div>
+<div class="card">Cloud Computing</div>
+</div>
+</section>
+
+<section id="contact">
+<h3>Contact</h3>
+<p>📧 sablaniyasumit18@gmail.com</p>
+<p>📱 +91 7984986818</p>
+<p>📍 Ahmedabad, Gujarat</p>
+</section>
+
+<footer>
+<p>© 2026 Sumit Sablaniya | DevOps Portfolio</p>
+</footer>
+
+<script>
+const words=["DevOps Engineer","AWS Cloud Engineer","Linux Administrator","Docker & Kubernetes","CI/CD Enthusiast"];
+let i=0,j=0,erase=false;
+const el=document.getElementById("typing");
+function type(){
+ let w=words[i];
+ if(!erase){
+   el.textContent=w.substring(0,j++);
+   if(j>w.length){erase=true;setTimeout(type,1200);return;}
+ }else{
+   el.textContent=w.substring(0,j--);
+   if(j<0){erase=false;i=(i+1)%words.length;j=0;}
+ }
+ setTimeout(type,erase?40:90);
+}
+type();
+</script>
+
+</body>
+</html>
